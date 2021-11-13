@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta charset="utf-8" />
+        <title>Your page title here :)</title>
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link
+            href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+            rel="stylesheet"
+            type="text/css"
+        />
+
+        <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link rel="stylesheet" href="src/css/normalize.css" />
+        <link rel="stylesheet" href="src/css/skeleton.css" />
+        <link rel="stylesheet" href="src/css/custom.css" />
+
+        <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+    </head>
+    <body>
+        <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <div class="container">
+            <h4 class="title__header">Добавление доставки</h4>
+            <p>
+                This index.html page is a placeholder with the CSS, font and
+                favicon. It's just waiting for you to add some content! If you
+                need some help hit up the
+                <a href="http://www.getskeleton.com">Skeleton documentation</a>.
+            </p>
+
+            <!-- The above form looks like this -->
+            <form>
+                <div class="row">
+                    <div class="six columns">
+                        <label for="orderId">Номер заказа (КЕН?)</label>
+                        <input
+                            class="u-full-width"
+                            type="text"
+                            placeholder="КЕН321-10"
+                            id="orderId"
+                            required="required"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="three columns">
+                        <label for="date">Дата доставки</label>
+                        <input type="date" class="u-full-width" id="date" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="six columns">
+                        <label for="address">Адрес доставки</label>
+                        <input
+                            class="u-full-width"
+                            type="text"
+                            placeholder="г.Москва, Обручева ул..."
+                            id="address"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="three columns">
+                        <label for="shippingtimefrom">Интервал с:</label>
+                        <select class="u-full-width" id="shippingtimefrom">
+                            <option value="Option 1">10</option>
+                            <option value="Option 2">11</option>
+                            <option value="Option 3">12</option>
+                            <option value="Option 3">13</option>
+                            <option value="Option 3">14</option>
+                            <option value="Option 3">15</option>
+                            <option value="Option 3">16</option>
+                            <option value="Option 3">17</option>
+                            <option value="Option 3">18</option>
+                        </select>
+                    </div>
+                    <div class="three columns">
+                        <label for="shippingtimefor">до:</label>
+                        <select class="u-full-width" id="shippingtimefor">
+                            <option value="Option 1">13</option>
+                            <option value="Option 2">14</option>
+                            <option value="Option 3">15</option>
+                            <option value="Option 3">16</option>
+                            <option value="Option 3">17</option>
+                            <option value="Option 3">18</option>
+                            <option value="Option 3">19</option>
+                            <option value="Option 3">20</option>
+                            <option value="Option 3">21</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="six columns">
+                        <label for="customer-name">ФИО клиента</label>
+                        <input
+                            class="u-full-width"
+                            type="text"
+                            placeholder=""
+                            id="customer-name"
+                            required="required"
+                            autocomplete="off"
+                        />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="six columns">
+                        <label for="phone-number-main">Телефон</label>
+                        <input
+                            class="u-full-width"
+                            type="text"
+                            placeholder=""
+                            id="phone-number-main"
+                            required="required"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="six columns">
+                        <label for="phone-number-secondary"
+                            >Дополнительный телефон</label
+                        >
+                        <input
+                            type="text"
+                            class="u-full-width"
+                            id="phone-number-secondary"
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="three columns">
+                        <label for="price">Сумма заказа</label>
+                        <input type="text" class="u-full-width" id="price" />
+                    </div>
+                    <div class="three columns">
+                        <label for="assessed-value">Оценочная стоимость</label>
+                        <input
+                            type="text"
+                            class="u-full-width"
+                            id="assessed-value"
+                        />
+                    </div>
+                    <div class="three columns">
+                        <label class="label-center">
+                            <input type="checkbox" />
+                            <span class="label-body">Оплачен</span>
+                        </label>
+                    </div>
+                </div>
+
+                <label for="comment">Комментарий</label>
+                <textarea
+                    class="u-full-width"
+                    placeholder="Введите текст комментария (необязательно)"
+                    id="comment"
+                ></textarea>
+
+                <input class="button-primary" type="submit" value="Отправить" />
+            </form>
+
+            <!-- Always wrap checkbox and radio inputs in a label and use a <span class="label-body"> inside of it -->
+
+            <!-- Note: The class .u-full-width is just a utility class shorthand for width: 100% -->
+        </div>
+
+        <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="./src/index.js"></script>
+    </body>
+</html>
