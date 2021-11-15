@@ -37,7 +37,6 @@ function sendData() {
             phone1 = "${phoneNumberMain.value}"
             phone2 = "${phoneNumberSecondary.value}"
             service = "${paymenHandler(paidCheckbox, returnCheckbox)}"
-            test = "yes"
             seats = "1"
             takewarehouse = "Москва">
             </Order>
