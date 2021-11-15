@@ -35,12 +35,12 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <div class="container">
             <h4 class="title__header">Добавление доставки</h4>
-            <p>
+            <!-- <p>
                 This index.html page is a placeholder with the CSS, font and
                 favicon. It's just waiting for you to add some content! If you
                 need some help hit up the
                 <a href="http://www.getskeleton.com">Skeleton documentation</a>.
-            </p>
+            </p> -->
 
             <!-- The above form looks like this -->
             <form>
@@ -76,29 +76,29 @@
                     <div class="three columns">
                         <label for="shippingtimefrom">Интервал с:</label>
                         <select class="u-full-width" id="shippingtimefrom">
-                            <option value="Option 1">10</option>
-                            <option value="Option 2">11</option>
-                            <option value="Option 3">12</option>
-                            <option value="Option 3">13</option>
-                            <option value="Option 3">14</option>
-                            <option value="Option 3">15</option>
-                            <option value="Option 3">16</option>
-                            <option value="Option 3">17</option>
-                            <option value="Option 3">18</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
                         </select>
                     </div>
                     <div class="three columns">
                         <label for="shippingtimefor">до:</label>
                         <select class="u-full-width" id="shippingtimefor">
-                            <option value="Option 1">13</option>
-                            <option value="Option 2">14</option>
-                            <option value="Option 3">15</option>
-                            <option value="Option 3">16</option>
-                            <option value="Option 3">17</option>
-                            <option value="Option 3">18</option>
-                            <option value="Option 3">19</option>
-                            <option value="Option 3">20</option>
-                            <option value="Option 3">21</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
                         </select>
                     </div>
                 </div>
@@ -153,10 +153,16 @@
                             id="assessed-value"
                         />
                     </div>
-                    <div class="three columns">
+                    <div class="two columns">
                         <label class="label-center">
-                            <input type="checkbox" />
+                            <input type="checkbox" id="paid-checkbox" />
                             <span class="label-body">Оплачен</span>
+                        </label>
+                    </div>
+                    <div class="two columns">
+                        <label class="label-center">
+                            <input type="checkbox" id="return-checkbox" />
+                            <span class="label-body">Обмен</span>
                         </label>
                     </div>
                 </div>
@@ -168,7 +174,18 @@
                     id="comment"
                 ></textarea>
 
-                <input class="button-primary" type="submit" value="Отправить" />
+                <div class="row">
+                    <div class="three columns">
+                        <input
+                            class="button-primary"
+                            type="submit"
+                            value="Отправить"
+                        />
+                    </div>
+                    <div class="nine columns">
+                        <ul id="errors-list"></ul>
+                    </div>
+                </div>
             </form>
 
             <!-- Always wrap checkbox and radio inputs in a label and use a <span class="label-body"> inside of it -->
