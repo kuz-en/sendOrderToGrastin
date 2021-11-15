@@ -50,7 +50,10 @@ function sendData() {
         redirect: 'follow',
     };
 
-    fetch('http://api.grastin.ru/api.php', requestOptions)
+    fetch(
+        'https://cors-anywhere.herokuapp.com/http://api.grastin.ru/api.php',
+        requestOptions
+    )
         .then((response) => response.text())
         .then(responseHandler)
         .catch((error) => console.log('error', error));
