@@ -6,3 +6,49 @@
 .label-center {
     margin-top: 3.5rem;
 }
+
+.single9 {
+    height: 6px;
+    background-color: #d8d7d7;
+    position: relative;
+    width: 134px;
+}
+
+.display-toggle {
+    display: none;
+}
+
+.single9:before {
+    content: '';
+    height: 6px;
+    width: 10px;
+    position: absolute;
+    left: 0;
+    background-color: #58acf1;
+    -webkit-animation: single9anim 4s infinite ease-in-out;
+    animation: single9anim 4s infinite ease-in-out;
+}
+
+@-webkit-keyframes single9anim {
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(124px);
+        transform: translateX(124px);
+    }
+}
+
+@keyframes single9anim {
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(124px);
+        transform: translateX(124px);
+    }
+}

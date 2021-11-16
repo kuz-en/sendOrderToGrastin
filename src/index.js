@@ -15,6 +15,7 @@ const button = document.querySelector('.button-primary'),
     returnCheckbox = document.getElementById('return-checkbox'),
     comment = document.getElementById('comment'),
     form = document.getElementById('form'),
+    loader = document.querySelector('.single9'),
     errorsList = document.getElementById('errors-list');
 
 function sendData() {
@@ -38,7 +39,6 @@ function sendData() {
             phone1 = "${phoneNumberMain.value}"
             phone2 = "${phoneNumberSecondary.value}"
             service = "${paymenHandler(paidCheckbox, returnCheckbox)}"
-            test = "yes"
             seats = "1"
             takewarehouse = "Москва">
             </Order>
@@ -76,7 +76,7 @@ function clearForm() {
 }
 function butonHandler() {
     button.classList.toggle('button-primary');
-    //button.disabled = true;
+    loader.classList.toggle('display-toggle');
 }
 
 function responseHandler(response) {
