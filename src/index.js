@@ -38,13 +38,15 @@ function sendData() {
             assessedsumma = "${assessedValue.value}"
             phone1 = "${phoneNumberMain.value}"
             phone2 = "${phoneNumberSecondary.value}"
-            service = "${paymenHandler(paidCheckbox, returnCheckbox)}"
+            service = "${paymentHandler(paidCheckbox, returnCheckbox)}"
             seats = "1"
+            test = "yes"
             takewarehouse = "Москва">
             </Order>
         </Orders>
         </File>`
     );
+
     const requestOptions = {
         method: 'POST',
         body: formdata,
@@ -60,7 +62,7 @@ function sendData() {
         .catch((error) => console.log('error', error));
 }
 
-function paymenHandler(payOrder, returnOrder) {
+function paymentHandler(payOrder, returnOrder) {
     if (payOrder.checked) {
         return 1;
     } else if (!payOrder.checked && !returnOrder.checked) {
@@ -74,7 +76,7 @@ function clearForm() {
     form.reset();
     errorsList.innerHTML = '';
 }
-function butonHandler() {
+function buttonHandler() {
     button.classList.toggle('button-primary');
     loader.classList.toggle('display-toggle');
 }
@@ -83,7 +85,7 @@ function responseHandler(response) {
     let parser = new DOMParser();
     let xmlDoc = parser.parseFromString(response, 'text/xml');
     let errors = xmlDoc.querySelectorAll('Error');
-    butonHandler();
+    buttonHandler();
     if (errors.length < 1) {
         const li = document.createElement('li');
         li.innerText = 'Отправка прошла успешно';
@@ -107,6 +109,6 @@ function parseDateFromPicker(date) {
 
 button.addEventListener('click', function (e) {
     e.preventDefault();
-    butonHandler();
+    buttonHandler();
     sendData();
 });
