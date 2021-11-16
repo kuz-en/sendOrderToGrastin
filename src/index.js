@@ -14,6 +14,7 @@ const button = document.querySelector('.button-primary'),
     paidCheckbox = document.getElementById('paid-checkbox'),
     returnCheckbox = document.getElementById('return-checkbox'),
     comment = document.getElementById('comment'),
+    form = document.getElementById('form'),
     errorsList = document.getElementById('errors-list');
 
 function sendData() {
@@ -37,6 +38,7 @@ function sendData() {
             phone1 = "${phoneNumberMain.value}"
             phone2 = "${phoneNumberSecondary.value}"
             service = "${paymenHandler(paidCheckbox, returnCheckbox)}"
+            test = "yes"
             seats = "1"
             takewarehouse = "Москва">
             </Order>
@@ -68,17 +70,28 @@ function paymenHandler(payOrder, returnOrder) {
     }
 }
 
+function clearForm() {
+    form.reset();
+    errorsList.innerHTML = '';
+}
+function butonHandler() {
+    button.classList.toggle('button-primary');
+    //button.disabled = true;
+}
+
 function responseHandler(response) {
     let parser = new DOMParser();
     let xmlDoc = parser.parseFromString(response, 'text/xml');
     let errors = xmlDoc.querySelectorAll('Error');
-    errorsList.innerHTML = '';
+    butonHandler();
     if (errors.length < 1) {
         const li = document.createElement('li');
         li.innerText = 'Отправка прошла успешно';
         li.style.color = 'green';
         errorsList.prepend(li);
+        setTimeout(clearForm, 1000);
     } else {
+        errorsList.innerHTML = '';
         errors.forEach((error) => {
             const li = document.createElement('li');
             li.innerText = error.textContent;
@@ -94,5 +107,6 @@ function parseDateFromPicker(date) {
 
 button.addEventListener('click', function (e) {
     e.preventDefault();
+    butonHandler();
     sendData();
 });
